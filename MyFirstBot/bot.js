@@ -1,6 +1,14 @@
 const Telegraf = require('telegraf');
+require('dotenv').config();
 
-const bot = new Telegraf('6357322301:AAEzHaubPvApiE3I3Qlqi9D7bLFjduYtcpE')
+const botToken = process.env.BOT_TOKEN;
+
+if (!botToken) {
+  console.error('BOT_TOKEN environment variable is not set.');
+  process.exit(1);
+}
+
+const bot = new Telegraf(botToken);
 
 /*
 bot.start((ctx)=>{

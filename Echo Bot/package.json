@@ -1,5 +1,5 @@
 {
-  "name": "myfirstbot",
+  "name": "echo-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "telegraf": "3.32"
+    "nodemon": "^3.0.1",
+    "telegraf": "^4.12.2"
   }
 }
