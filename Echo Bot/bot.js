@@ -19,6 +19,7 @@ Say something to me
 /help - command reference`
 
 bot.start((ctx)=>{
+  logger(ctx)
   ctx.reply("Hi")
   ctx.reply(helpMessage);
 })
@@ -26,5 +27,31 @@ bot.start((ctx)=>{
 bot.help((ctx)=>{
   ctx.reply(help)
 })
+
+bot.command("echo",(ctx)=>{
+  logger(ctx)
+  console.log(ctx)
+
+  let input = ctx.message.text
+
+  let inputArray = input.split("")
+
+  console.log(inputArray)
+
+  let message = ""
+
+
+  if(inputArray.length ==1){
+    message = "You said echo"
+  }else{
+    inputArray.shift()
+    message = inputArray.join("")
+  }
+  ctx.reply(message)
+})
+
+function logger(ctx){
+  console.log('Someone used your bot')
+}
 
 bot.launch();
