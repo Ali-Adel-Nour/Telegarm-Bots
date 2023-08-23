@@ -18,6 +18,11 @@ Say something to me
 /start-start the bot
 /help - command reference`
 
+bot.use((ctx,next)=>{
+  console.log(ctx.from.username+ " said: " +ctx.message.text)
+  next()
+})
+
 bot.start((ctx)=>{
   logger(ctx)
   ctx.reply("Hi")
@@ -51,7 +56,10 @@ bot.command("echo",(ctx)=>{
 })
 
 function logger(ctx){
-  console.log('Someone used your bot')
+  //console.log('Someone used your bot')
+
+  console.log(ctx.from)
+  console.log(ctx.from.username+ " said: " +ctx.message.text)
 }
 
 bot.launch();
