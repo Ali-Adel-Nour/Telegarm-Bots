@@ -12,11 +12,17 @@ if (!botToken) {
 
 const bot = new Telegraf(botToken);
 
+bot.on('message',ctx=>{
+  console.log(ctx.message.photo)
+})
 
 bot.command('test', ctx=>{
   //url
 
   bot.telegram.sendPhoto(ctx.chat.id,"https://www.egypttoursportal.com/wp-content/uploads/2017/11/Stanly-Bridge-Alexandria-Egypt-Tours-Portal.jpg")
+
+  bot.telegram.sendPhoto(ctx.chat.id,"")
+
 })
 
 bot.launch()
